@@ -8,7 +8,7 @@ npm install -g cordova-sqlite-devtools
 
 # Usage
 ```
-csb --help
+csd --help
 ```
 
 
@@ -18,7 +18,7 @@ should be able to find the database copied into the `_sqlite-backups` folder of 
 Use [SQLite browser](http://sqlitebrowser.org/) to open the database and browse the data.
 
 ```
-csb pull awesome.db
+csd pull awesome.db
 ```
 
 Where `awesome.db` is the name of the database to backup. Note: the database name is case sensitive.
