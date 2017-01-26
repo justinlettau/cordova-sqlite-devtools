@@ -10,7 +10,7 @@
     },
     "preferGlobal": true,
     "bin": {
-        "csd": "bin/cordova-sqlite-devtools"
+        "csd": "bin/csd"
     },
     "dependencies": {
         "commander": "2.9.0",
