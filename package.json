@@ -1,0 +1,20 @@
+{
+    "name": "cordova-sqlite-devtools",
+    "version": "0.0.1",
+    "description": "Access SQLite database from Android devices.",
+    "author": "Justin Lettau",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/justinlettau/cordova-sqlite-devtools"
+    },
+    "preferGlobal": true,
+    "bin": {
+        "csd": "bin/cordova-sqlite-devtools"
+    },
+    "dependencies": {
+        "commander": "2.9.0",
+        "fs-extra": "2.0.0",
+        "xml2js": "0.4.17"
+    }
+}
