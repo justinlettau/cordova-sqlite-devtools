@@ -5,11 +5,19 @@ var program = require('commander');
 
 // tasks
 var pull = require('../lib/pull');
+var clean = require('../lib/clean');
 
 program
     .command('pull [database]')
+    .alias('p')
     .description('Pull database from device.')
     .action(pull);
+
+program
+    .command('clean')
+    .alias('c')
+    .description('Remove all backup sqlite files.')
+    .action(clean);
 
 program
     .version(pkg.version)

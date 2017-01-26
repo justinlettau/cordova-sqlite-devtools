@@ -11,7 +11,6 @@ npm install -g cordova-sqlite-devtools
 csd --help
 ```
 
-
 ## Pull Database Backup
 Make sure you have connected your mobile phone to your laptop / desktop. With the below command, you
 should be able to find the database copied into the `_sqlite-backups` folder of the current directory.
@@ -22,3 +21,10 @@ csd pull awesome.db
 ```
 
 Where `awesome.db` is the name of the database to backup. Note: the database name is case sensitive.
+
+## Delete Database Backups
+Remove `_sqlite-backups` folder and all backups.
+
+```
+csd clean
+```
