@@ -7,14 +7,23 @@ npm install -g cordova-sqlite-devtools
 ```
 
 # Usage
+Make sure you have connected your mobile phone to your laptop / desktop.
+
 ```
 csd --help
 ```
 
+## List Databases
+List all databases the device.
+
+```
+csd list
+```
+
 ## Pull Database Backup
-Make sure you have connected your mobile phone to your laptop / desktop. With the below command, you
-should be able to find the database copied into the `_sqlite-backups` folder of the current directory.
-Use [SQLite browser](http://sqlitebrowser.org/) to open the database and browse the data.
+With the below command, you should be able to find the database copied into the `_sqlite-backups`
+folder of the current directory. Use [SQLite browser](http://sqlitebrowser.org/) to open the
+database and browse the data.
 
 ```
 csd pull awesome.db

@@ -6,6 +6,13 @@ var program = require('commander');
 // tasks
 var pull = require('../lib/pull');
 var clean = require('../lib/clean');
+var list = require('../lib/list');
+
+program
+    .command('list')
+    .alias('ls')
+    .description('List all database files.')
+    .action(list);
 
 program
     .command('pull [database]')
