@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/justinlettau/cordova-sqlite-devtools.svg?branch=master)](https://travis-ci.org/justinlettau/cordova-sqlite-devtools)
+[![Dependency Status](https://david-dm.org/justinlettau/cordova-sqlite-devtools.svg)](https://david-dm.org/justinlettau/cordova-sqlite-devtool)
 
 # Cordova SQLite Devtools
 A quick and easy way to pull a backup of a sqlite database from a connected Android device.
