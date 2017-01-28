@@ -7,7 +7,9 @@ npm install -g cordova-sqlite-devtools
 ```
 
 # Usage
-Make sure you have connected your mobile phone to your laptop / desktop.
+`cordova-sqlite-devtools` uses [Android Debug Bridge (adb)](https://developer.android.com/studio/command-line/adb.html)
+to communicate with your Android device. Make sure you have `adb` installed / configured, and you
+have connected your mobile phone to your laptop / desktop.
 
 ```
 csd --help
