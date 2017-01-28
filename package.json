@@ -20,6 +20,9 @@
         "url": "https://github.com/justinlettau/cordova-sqlite-devtools/issues"
     },
     "preferGlobal": true,
+    "scripts": {
+        "test": "jshint lib"
+    },
     "bin": {
         "csd": "bin/csd"
     },
