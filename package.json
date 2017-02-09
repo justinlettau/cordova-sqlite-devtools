@@ -31,5 +31,8 @@
     "del": "^2.2.2",
     "fs-extra": "^2.0.0",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
   }
 }
