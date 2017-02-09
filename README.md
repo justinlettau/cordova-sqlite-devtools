@@ -1,4 +1,5 @@
-[![NPM Version](https://badge.fury.io/js/cordova-sqlite-devtools.svg)](https://badge.fury.io/js/sql-source-control)[![Build Status](https://travis-ci.org/justinlettau/cordova-sqlite-devtools.svg?branch=master)](https://travis-ci.org/justinlettau/cordova-sqlite-devtools)
+[![NPM Version](https://badge.fury.io/js/cordova-sqlite-devtools.svg)](https://badge.fury.io/js/sql-source-control)
+[![Build Status](https://travis-ci.org/justinlettau/cordova-sqlite-devtools.svg?branch=master)](https://travis-ci.org/justinlettau/cordova-sqlite-devtools)
 [![Dependency Status](https://david-dm.org/justinlettau/cordova-sqlite-devtools.svg)](https://david-dm.org/justinlettau/cordova-sqlite-devtool)
 [![Dev Dependency Status](https://david-dm.org/justinlettau/cordova-sqlite-devtool/dev-status.svg)](https://david-dm.org/justinlettau/cordova-sqlite-devtool?type=dev)
 
