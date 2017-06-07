@@ -21,7 +21,7 @@ csd --help
 ```
 
 ## List Databases
-List all databases the device.
+List all databases on the device.
 
 ```
 csd list
