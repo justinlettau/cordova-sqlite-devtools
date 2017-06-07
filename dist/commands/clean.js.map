@@ -1,0 +1,1 @@
+{"version":3,"file":"clean.js","sourceRoot":"","sources":["../../src/commands/clean.ts"],"names":[],"mappings":";;AAAA,6BAA+B;AAC/B,yBAA2B;AAE3B,6CAA8C;AAE9C;;GAEG;AACH;IACI,GAAG,CAAC,mBAAS,CAAC,CAAC,IAAI,CAAC;QAChB,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,KAAK,CAAC,+BAA+B,CAAC,CAAC,CAAC;IAC9D,CAAC,CAAC,CAAC;AACP,CAAC;AAJD,sBAIC"}
