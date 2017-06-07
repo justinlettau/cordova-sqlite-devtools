@@ -1,6 +1,6 @@
 {
   "name": "cordova-sqlite-devtools",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Access SQLite database from Android devices.",
   "keywords": [
     "sqlite",
