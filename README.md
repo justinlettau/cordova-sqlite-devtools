@@ -36,11 +36,22 @@ database and browse the data.
 csd pull awesome.db
 ```
 
-Where `awesome.db` is the name of the database to backup. Note: the database name is case sensitive.
+Where `awesome.db` is the optional name of the database to backup. Note: the database name is case
+sensitive. If the database is not provided, you will be prompted to select from a list of available
+databases on the device.
 
 ## Delete Database Backups
 Remove `_sqlite-backups` folder and all backups.
 
 ```
 csd clean
+```
+
+# Development
+For easy development, clone the repo and run the following commands in the `cordova-sqlite-devtools` directory:
+
+```bash
+npm install
+npm link
+npm run build
 ```
