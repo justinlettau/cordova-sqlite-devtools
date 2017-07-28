@@ -10,7 +10,7 @@ export const backupDir: string = '_sqlite-backups';
  * Get package id from `config.xml` file in current directory.
  */
 export function getPackageId(): Promise<string> {
-    const parser = new xml2js.Parser();
+    const parser: xml2js.Parser = new xml2js.Parser();
 
     return new Promise((resolve, reject) => {
         const config: Buffer = fs.readFileSync('./config.xml');
@@ -27,5 +27,5 @@ export function getPackageId(): Promise<string> {
 
             return resolve(result.widget.$.id);
         });
-    }).catch(err => console.error(err));
+    });
 }

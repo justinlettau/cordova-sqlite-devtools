@@ -1,4 +1,4 @@
-const pkg = require('../package.json');
+import pkg = require('../package.json');
 import * as program from 'commander';
 
 import { clean } from './commands/clean';
@@ -24,5 +24,5 @@ program
     .action(clean);
 
 program
-    .version(pkg.version)
+    .version((pkg as any).version)
     .parse(process.argv);

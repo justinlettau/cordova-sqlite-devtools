@@ -4,7 +4,7 @@ import * as fs from 'fs-extra';
 import * as inquirer from 'inquirer';
 
 import { getDatabases } from './list';
-import { getPackageId, backupDir } from '../common/utility';
+import { backupDir, getPackageId } from '../common/utility';
 
 /**
  * Pull a database file from the device to the backup directory.
@@ -53,7 +53,7 @@ function prompt(packageId: string): Promise<string> {
                 name: 'db',
                 message: 'What database?',
                 type: 'list',
-                choices: choices
+                choices
             }]).then((answers: inquirer.Answers): string => {
                 return answers.db;
             });
