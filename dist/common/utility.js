@@ -23,7 +23,7 @@ function getPackageId() {
             }
             return resolve(result.widget.$.id);
         });
-    }).catch(function (err) { return console.error(err); });
+    });
 }
 exports.getPackageId = getPackageId;
 //# sourceMappingURL=utility.js.map

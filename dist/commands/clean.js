@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var chalk = require("chalk");
+var chalk_1 = require("chalk");
 var del = require("del");
 var utility_1 = require("../common/utility");
 /**
@@ -8,7 +8,7 @@ var utility_1 = require("../common/utility");
  */
 function clean() {
     del(utility_1.backupDir).then(function () {
-        console.log(chalk.green('Backups successfully removed!'));
+        console.log(chalk_1.default.green('Backups successfully removed!'));
     });
 }
 exports.clean = clean;

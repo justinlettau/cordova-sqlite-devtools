@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var child = require("child_process");
-var chalk = require("chalk");
+var chalk_1 = require("chalk");
 var fs = require("fs-extra");
 var inquirer = require("inquirer");
 var list_1 = require("./list");
@@ -30,7 +30,7 @@ function pull(db) {
                 console.error(error);
                 return;
             }
-            console.log(chalk.green('SQLite backup successful!'));
+            console.log(chalk_1.default.green('SQLite backup successful!'));
         });
     });
 }

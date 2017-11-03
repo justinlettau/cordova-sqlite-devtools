@@ -1,4 +1,4 @@
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 import * as del from 'del';
 
 import { backupDir } from '../common/utility';
