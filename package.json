@@ -32,6 +32,10 @@
   "bin": {
     "csd": "bin/csd"
   },
+  "files": [
+    "bin/",
+    "dist/"
+  ],
   "dependencies": {
     "chalk": "^2.3.0",
     "commander": "^2.11.0",
