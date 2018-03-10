@@ -7,7 +7,7 @@ import { backupDir } from '../common/utility';
  * Remove backups folder and all backups.
  */
 export function clean(): void {
-    del(backupDir).then((): void => {
-        console.log(chalk.green('Backups successfully removed!'));
-    });
+  del(backupDir).then((): void => {
+    console.log(chalk.green('Backups successfully removed!'));
+  });
 }

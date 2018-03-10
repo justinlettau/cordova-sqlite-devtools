@@ -12,31 +12,31 @@ import { backupDir, getPackageId } from '../common/utility';
  * @param db Name of database file to pull.
  */
 export function pull(db?: string): void {
-    let packageId: string;
+  let packageId: string;
 
-    getPackageId()
-        .then((id: string) => {
-            packageId = id;
-            return db || prompt(id);
-        })
-        .then((database: string) => {
-            const cmd: string = [
-                `adb shell "run-as ${packageId} chmod 666 /data/data/${packageId}/databases/${database}"`,
-                `adb exec-out run-as ${packageId} cat databases/${database} > ${backupDir}/${database}`
-            ].join(' && ');
+  getPackageId()
+    .then((id: string) => {
+      packageId = id;
+      return db || prompt(id);
+    })
+    .then((database: string) => {
+      const cmd: string = [
+        `adb shell "run-as ${packageId} chmod 666 /data/data/${packageId}/databases/${database}"`,
+        `adb exec-out run-as ${packageId} cat databases/${database} > ${backupDir}/${database}`
+      ].join(' && ');
 
-            // make sure backup directory is present
-            fs.ensureDirSync(backupDir);
+      // make sure backup directory is present
+      fs.ensureDirSync(backupDir);
 
-            child.exec(cmd, (error: Error, stdout: string, stderr: string): void => {
-                if (error) {
-                    console.error(error);
-                    return;
-                }
+      child.exec(cmd, (error: Error, stdout: string, stderr: string): void => {
+        if (error) {
+          console.error(error);
+          return;
+        }
 
-                console.log(chalk.green('SQLite backup successful!'));
-            });
-        });
+        console.log(chalk.green('SQLite backup successful!'));
+      });
+    });
 }
 
 /**
@@ -45,17 +45,17 @@ export function pull(db?: string): void {
  * @param packageId Application package id.
  */
 function prompt(packageId: string): Promise<string> {
-    return getDatabases(packageId)
-        .then((databases: string) => {
-            const choices: string[] = databases.split('\n').map(item => item.trim()).filter(item => !!item);
+  return getDatabases(packageId)
+    .then((databases: string) => {
+      const choices: string[] = databases.split('\n').map(item => item.trim()).filter(item => !!item);
 
-            return inquirer.prompt([{
-                name: 'db',
-                message: 'What database?',
-                type: 'list',
-                choices
-            }]).then((answers: inquirer.Answers): string => {
-                return answers.db;
-            });
-        });
+      return inquirer.prompt([{
+        name: 'db',
+        message: 'What database?',
+        type: 'list',
+        choices
+      }]).then((answers: inquirer.Answers): string => {
+        return answers.db;
+      });
+    });
 }
