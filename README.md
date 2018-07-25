@@ -47,6 +47,21 @@ Remove `_sqlite-backups` folder and all backups.
 csd clean
 ```
 
+## Generate
+Combine all SQL files into a JavaScript file that adds all SQL queries to an object on the window (`window._sqlite`).
+The generated file can be included (`<script src="build/sqlite.js"></script>`) and the queries accessed from code. For example,
+if your SQL file is named `MyAwesomeQuery.sql`, then you can access the query via `window._sqlite['MyAwesomeQuery']`.
+
+```
+csd generate
+```
+
+### Options
+| Name     | Alias | Description                  | Default               |
+|----------|-------|------------------------------|-----------------------|
+| `--src`  | `-s`  | Source glob of sql files.    | `src/sqlite/**/*.sql` |
+| `--dest` | `-d`  | Destination JavaScript file. | `www/build/sqlite.js` |
+
 # Development
 For easy development, clone the repo and run the following commands in the `cordova-sqlite-devtools` directory:
 
