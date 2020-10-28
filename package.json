@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "chalk": "^2.3.2",
-    "commander": "^2.13.0",
+    "commander": "^6.0.0",
     "del": "^3.0.0",
     "fs-extra": "^8.0.0",
     "glob": "^7.1.2",
