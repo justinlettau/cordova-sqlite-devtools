@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import * as del from 'del';
+import del = require('del');
 
 import { backupDir } from '../common/utility';
 

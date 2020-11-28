@@ -22,13 +22,13 @@ export function pull(db?: string): void {
     .then((database: string) => {
       const cmd: string = [
         `adb shell "run-as ${packageId} chmod 666 /data/data/${packageId}/databases/${database}"`,
-        `adb exec-out run-as ${packageId} cat databases/${database} > ${backupDir}/${database}`
+        `adb exec-out run-as ${packageId} cat databases/${database} > ${backupDir}/${database}`,
       ].join(' && ');
 
       // make sure backup directory is present
       fs.ensureDirSync(backupDir);
 
-      child.exec(cmd, (error: Error, stdout: string, stderr: string): void => {
+      child.exec(cmd, (error: Error): void => {
         if (error) {
           console.error(error);
           return;
@@ -45,17 +45,23 @@ export function pull(db?: string): void {
  * @param packageId Application package id.
  */
 function prompt(packageId: string): Promise<string> {
-  return getDatabases(packageId)
-    .then((databases: string) => {
-      const choices: string[] = databases.split('\n').map(item => item.trim()).filter(item => !!item);
+  return getDatabases(packageId).then((databases: string) => {
+    const choices: string[] = databases
+      .split('\n')
+      .map((item) => item.trim())
+      .filter((item) => !!item);
 
-      return inquirer.prompt([{
-        name: 'db',
-        message: 'What database?',
-        type: 'list',
-        choices
-      }]).then((answers: inquirer.Answers): string => {
+    return inquirer
+      .prompt([
+        {
+          name: 'db',
+          message: 'What database?',
+          type: 'list',
+          choices,
+        },
+      ])
+      .then((answers: inquirer.Answers): string => {
         return answers.db;
       });
-    });
+  });
 }

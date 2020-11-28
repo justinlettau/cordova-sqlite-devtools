@@ -4,7 +4,7 @@ import * as xml2js from 'xml2js';
 /**
  * Database backup directory.
  */
-export const backupDir: string = '_sqlite-backups';
+export const backupDir = '_sqlite-backups';
 
 /**
  * Get package id from `config.xml` file in current directory.
@@ -22,7 +22,9 @@ export function getPackageId(): Promise<string> {
 
       // ensure package id can be parsed
       if (!result.widget || !result.widget.$ || !result.widget.$.id) {
-        return reject(new Error('Unable to find package id in config.xml file.'));
+        return reject(
+          new Error('Unable to find package id in config.xml file.')
+        );
       }
 
       return resolve(result.widget.$.id);

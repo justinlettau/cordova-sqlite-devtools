@@ -32,6 +32,5 @@ program
   .option('-d, --dest [value]', 'Destination output file.')
   .action(generate);
 
-program
-  .version((pkg as any).version)
-  .parse(process.argv);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+program.version((pkg as any).version).parse(process.argv);

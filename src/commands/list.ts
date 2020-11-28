@@ -9,7 +9,7 @@ export function list(): void {
   getPackageId()
     .then((id: string) => getDatabases(id))
     .then((files: string) => console.log(files))
-    .catch((error: any) => console.error(error));
+    .catch((error) => console.error(error));
 }
 
 /**
@@ -18,10 +18,10 @@ export function list(): void {
  * @param packageId Application package id.
  */
 export function getDatabases(packageId: string): Promise<string> {
-  const cmd: string = `adb shell "run-as ${packageId} ls databases"`;
+  const cmd = `adb shell "run-as ${packageId} ls databases"`;
 
   return new Promise((resolve, reject): void => {
-    child.exec(cmd, (error: Error, stdout: string, stderr: string): void => {
+    child.exec(cmd, (error: Error, stdout: string): void => {
       if (error) {
         return reject(error);
       }

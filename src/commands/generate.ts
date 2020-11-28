@@ -21,9 +21,9 @@ export function generate(options: GenerateOptions): void {
   const dest: string = options.dest || 'www/build/sqlite.js';
 
   const files: string[] = glob.sync(src);
-  let output: string = '';
+  let output = '';
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const { name, content } = parseFile(file);
     output += `window._sqlite['${name}'] = ${content};\n`;
   });
@@ -42,22 +42,23 @@ export function generate(options: GenerateOptions): void {
  *
  * @param file Path to sql file.
  */
-function parseFile(file: string): { name: string; content: string; } {
+function parseFile(file: string): { name: string; content: string } {
   const filename: string = path.basename(file);
   const name: string = filename.substring(0, filename.indexOf('.'));
   let content: string = fs.readFileSync(file, 'utf8');
 
-  content = content
-    .replace(/^\uFEFF/, '')
-    .split(/^/gm)
-    .map(line => JSON.stringify(line.replace(/(\r\n|\n|\r)/g, '') + ' '))
-    .filter(line => !(/^"([\s]*)"$/).test(line))
-    .join(' +\n')
-    .replace(/(\\t)/g, '  ')
-    .trim() || '""';
+  content =
+    content
+      .replace(/^\uFEFF/, '')
+      .split(/^/gm)
+      .map((line) => JSON.stringify(line.replace(/(\r\n|\n|\r)/g, '') + ' '))
+      .filter((line) => !/^"([\s]*)"$/.test(line))
+      .join(' +\n')
+      .replace(/(\\t)/g, '  ')
+      .trim() || '""';
 
   return {
     name,
-    content
+    content,
   };
 }
